@@ -5,9 +5,9 @@ function swap(arr: number[], index1: number, index2: number) {
 }
 
 //desctrtoring
-function swapSort(arr: number[], i1: number, i2: number) {
+/* function swapSort(arr: number[], i1: number, i2: number) {
   [arr[i1], arr[i2]] = [arr[i2], arr[i1]];
-}
+} */
 
 const testArr = [5, 3, 9, 2];
 const testArr2 = [...testArr];
@@ -21,7 +21,7 @@ function bubbleSort(arr: number[]) {
     for (let j = 0; j < i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         //0(1) Konstante Komplexität
-        swapSort(arr, j, j + 1);
+        swap(arr, j, j + 1);
         noSwap = false;
       }
     }
@@ -32,23 +32,7 @@ function bubbleSort(arr: number[]) {
 
 //console.log(bubbleSort(testArr));
 
-function selectionSort(arr: number[]): number[] {
-  let min: number;
-  for (let i = 0; i < arr.length; i++) {
-    min = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[min]) {
-        min = j;
-      }
-    }
-    if (min !== i) {
-      swapSort(arr, min, i);
-    }
-  }
-  return arr;
-}
 
-//console.log(selectionSort([50, 4, 28, 1, 80, 10, 15, 7, 0]));
 //0(n^2)
 function insertionSort(arr: number[]) {
   let j = 0;
