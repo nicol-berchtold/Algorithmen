@@ -9,6 +9,42 @@ function digitCount(num: number) {
     return Math.floor(Math.log10(Math.abs(num)) +1);
 }
 
+function mostDigit (numbers: number[]): number {
+    let maxDigit = 0;
+    numbers.forEach((num) => {
+        maxDigit = Math.max(digitCount(num), maxDigit)
+    });
+    return maxDigit;
+}
+
+function radixSort(arr: number[]): number[] {
+    const most = mostDigit(arr);
+    for(let i = 0; i < most; i++) {
+        let digitBuckets: number[][] = Array.from({ length: 10}, () => []);
+        for (let j = 0; j < arr.length; j++) {
+            const digit = getDigit(arr[j], i);
+            digitBuckets[digit].push(arr[j]);
+        }
+        arr = ([] as number[]).concat(...digitBuckets);
+    }
+    return arr;
+}
+const data = [5, 12, 3, 11];
+console.log(radixSort(data))
+/*
+const data = [1, 2, 3];
+const data2 = [...data]; //[1, 2, 3]
+data.forEach((num) => {
+    data2.push(num);
+});
+function sumRandomNums(...args: number[]) {}
+sumRandomNums(1, 3, 20, 100, 65);
+
+//Generics ist mit T
+function sumRandomNums<T>(...args: number[]) {}
+sumRandomNums(1, 3, 20, 100, 65);
+*/
+
 
 
 

@@ -1,7 +1,8 @@
+"use strict";
 function searchSubString(text, term) {
-    var counter = 0;
-    for (var i = 0; i < text.length; i++) {
-        for (var j = 0; j < term.length; j++) {
+    let counter = 0;
+    for (let i = 0; i < text.length; i++) {
+        for (let j = 0; j < term.length; j++) {
             if (text[i + j] !== term[j])
                 break;
             if (j === term.length - 1)

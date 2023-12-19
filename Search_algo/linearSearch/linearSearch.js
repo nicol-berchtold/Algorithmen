@@ -9,4 +9,3 @@ function linearSearch(array, term) {
 }
 console.log(linearSearch([1, 2, 5], 6)); //-1
 console.log(linearSearch([1, 2, 5, 6, 108, 60, 98, 20], 20)); //-1
-//# sourceMappingURL=main.js.map

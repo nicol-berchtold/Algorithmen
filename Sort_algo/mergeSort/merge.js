@@ -1,3 +1,4 @@
+"use strict";
 //Merge Sort (Divide & Conquer)
 //[5, 2, 10, 71, 98, 22, 23]
 //[5, 2, 10, 71] [98, 22, 23]
@@ -13,9 +14,9 @@
 //}
 // 0(n)
 function merge(arr1, arr2) {
-    var sortedArray = [];
-    var i = 0;
-    var j = 0;
+    const sortedArray = [];
+    let i = 0;
+    let j = 0;
     while (i < arr1.length && j < arr2.length) {
         if (arr1[i] < arr2[j]) {
             sortedArray.push(arr1[i]);
@@ -42,9 +43,9 @@ function merge(arr1, arr2) {
 function mergeSort(arr) {
     if (arr.length <= 1)
         return arr;
-    var half = Math.floor(arr.length / 2);
-    var left = mergeSort(arr.slice(0, half));
-    var right = mergeSort(arr.slice(half));
+    let half = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, half));
+    let right = mergeSort(arr.slice(half));
     return merge(left, right);
 }
 console.log(mergeSort([20, 15, 3, 80, 6, 60, 45, 1]));
